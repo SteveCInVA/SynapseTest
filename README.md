@@ -1,1 +1,1 @@
-"# Synapse Test Code" 
+# Synapse Test Code
