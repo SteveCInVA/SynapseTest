@@ -1,0 +1,17 @@
+{
+	"name": "Initial Code",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://stsynapselpcmi5wcehtio.dfs.core.windows.net/synapsefs/Loan_Default.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) WITH\n    (\n        [Batch Enrolled] VARCHAR(15) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Grade] VARCHAR(6) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Sub Grade] VARCHAR(6) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Employment Duration] VARCHAR(15) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Verification Status] VARCHAR(50) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Payment Plan] VARCHAR(5) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Loan Title] VARCHAR(50) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Initial List Status] VARCHAR(5) COLLATE Latin1_General_100_BIN2_UTF8,\n        [Application Type] VARCHAR(50) COLLATE Latin1_General_100_BIN2_UTF8\n    )\n    AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
